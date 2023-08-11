@@ -3,6 +3,7 @@ const user_route=express();
 const auth=require('../middleweares/auth');
 const bodyParser=require('body-parser');
 const userController=require('../controllers/userController');
+const path = require('path');
 
 //session
 const session=require('express-session');
