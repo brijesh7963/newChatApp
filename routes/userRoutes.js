@@ -8,7 +8,7 @@ const userController=require('../controllers/userController');
 const session=require('express-session');
 const {SESSION_SECRET}=process.env;
 user_route.use(session({
-  secret: SESSION_SECRET,
+  secret: 'brijeshkumar',
   resave: false,
   saveUninitialized: true,
 }));
