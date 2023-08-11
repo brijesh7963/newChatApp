@@ -1,6 +1,6 @@
 require('dotenv').config();
 const User=require('./models/userModel');
-const path = require('path');
+
 
 var mongoose=require('mongoose');
 mongoose.connect('mongodb+srv://viky914011:esIRNU4JwNGgEh5T@dynamic-chat-app.fa8wisw.mongodb.net/?retryWrites=true&w=majority');
