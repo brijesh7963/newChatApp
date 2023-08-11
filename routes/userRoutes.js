@@ -22,7 +22,7 @@ user_route.set('view engine','ejs');
 user_route.set('views', path.join(__dirname, 'views'));
 user_route.use(express.static('public'));
 
-const path=require('path');
+
 const multer=require('multer');
 const storage=multer.diskStorage({
     destination:(req,file,cb)=>{
