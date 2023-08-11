@@ -2,7 +2,7 @@ require('dotenv').config();
 const User=require('./models/userModel');
 
 var mongoose=require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/dynamic-chat-app');
+mongoose.connect('mongodb+srv://viky914011:esIRNU4JwNGgEh5T@dynamic-chat-app.fa8wisw.mongodb.net/?retryWrites=true&w=majority');
 
 const app=require('express')();
 
