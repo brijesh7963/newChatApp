@@ -48,8 +48,17 @@ usp.on('connection',async(socket)=>{
         ]});
         socket.emit('loadChats',{chats:chats});
     });
-});
 
+    //delete old chat
+    socket.on('chatDelete',function(id){
+    socket.broadcast.emit('chatMessageDeleted', id);
+    })
+
+        //update old chat
+    socket.on('chatUpdated',function(id){
+    socket.broadcast.emit('chatMessageUpdated', id);
+    })
+});
 
 
 http.listen(3000,()=>{

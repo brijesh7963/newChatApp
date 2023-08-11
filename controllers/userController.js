@@ -89,6 +89,28 @@ const saveChat=async(req,res)=>{
         res.status(400).send({success:false,msg:err});
     }
 }
+
+const deleteChat=async(req,res)=>{
+    try{
+        await Chat.deleteOne({_id:req.body.id});
+        res.status(200).send({success:true});
+    }catch(err){
+        res.status(400).send({success:false,msg:err.message});
+    }
+}
+
+const updateChat=async(req,res)=>{
+    try{
+        await Chat.findByIdAndUpdate({_id:req.body.id},{
+            $set:{
+                message:req.body.message
+            }
+        })
+        res.status(200).send({success:true});
+    }catch(err){
+        res.status(400).send({success:false,msg:err.message});
+    }
+}
 module.exports={
     registerLoad,
     register,
@@ -96,5 +118,7 @@ module.exports={
     login,
     logout,
     loadDashboard,
-    saveChat
+    saveChat,
+    deleteChat,
+    updateChat
 }
