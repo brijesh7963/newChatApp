@@ -5,7 +5,7 @@ var mongoose=require('mongoose');
 mongoose.connect('mongodb+srv://viky914011:esIRNU4JwNGgEh5T@dynamic-chat-app.fa8wisw.mongodb.net/?retryWrites=true&w=majority');
 
 const app=require('express')();
-
+const PORT=process.env.PORT || 3000
 
 
 //user route
@@ -61,6 +61,6 @@ usp.on('connection',async(socket)=>{
 });
 
 
-http.listen(3000,()=>{
+http.listen(PORT,()=>{
     console.log("Server is running");
 })
